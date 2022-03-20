@@ -25,6 +25,24 @@ class ScoreHome extends StatefulWidget {
 
 class _ScoreHomeState extends State<ScoreHome> {
   int number = 0;
+  void increaseNumber() {
+    setState(() {
+      number++;
+    });
+  }
+
+  void decreaseNumber() {
+    setState(() {
+      number--;
+    });
+  }
+
+  void resetNumber() {
+    setState(() {
+      number = 0;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,7 +52,7 @@ class _ScoreHomeState extends State<ScoreHome> {
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.restore_outlined),
-        onPressed: () {},
+        onPressed: resetNumber,
       ),
       body: Column(
         children: [
@@ -65,7 +83,7 @@ class _ScoreHomeState extends State<ScoreHome> {
                   'Increase',
                   style: TextStyle(color: Colors.white),
                 ),
-                onPressed: () {},
+                onPressed: increaseNumber,
               ),
               SizedBox(
                 width: 8,
@@ -76,7 +94,7 @@ class _ScoreHomeState extends State<ScoreHome> {
                   'Decrease',
                   style: TextStyle(color: Colors.white),
                 ),
-                onPressed: () {},
+                onPressed: decreaseNumber,
               ),
             ],
           ),
