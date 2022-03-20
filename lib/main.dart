@@ -24,12 +24,17 @@ class ScoreHome extends StatefulWidget {
 }
 
 class _ScoreHomeState extends State<ScoreHome> {
+  int number = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text("Score App"),
         centerTitle: true,
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.restore_outlined),
+        onPressed: () {},
       ),
       body: Column(
         children: [
@@ -44,9 +49,9 @@ class _ScoreHomeState extends State<ScoreHome> {
           )),
           Center(
               child: Text(
-            "0",
+            number.toString(),
             style: TextStyle(
-                color: Colors.red, fontSize: 85, fontWeight: FontWeight.bold),
+                color: Colors.red, fontSize: 125, fontWeight: FontWeight.bold),
           )),
           SizedBox(
             height: 25,
@@ -56,12 +61,21 @@ class _ScoreHomeState extends State<ScoreHome> {
             children: [
               RaisedButton(
                 color: Colors.blue,
-                child: Text('Increase'),
+                child: Text(
+                  'Increase',
+                  style: TextStyle(color: Colors.white),
+                ),
                 onPressed: () {},
+              ),
+              SizedBox(
+                width: 8,
               ),
               RaisedButton(
                 color: Colors.red,
-                child: Text('Decrease'),
+                child: Text(
+                  'Decrease',
+                  style: TextStyle(color: Colors.white),
+                ),
                 onPressed: () {},
               ),
             ],
