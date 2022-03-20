@@ -48,6 +48,24 @@ class _ScoreHomeState extends State<ScoreHome> {
             style: TextStyle(
                 color: Colors.red, fontSize: 85, fontWeight: FontWeight.bold),
           )),
+          SizedBox(
+            height: 25,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              RaisedButton(
+                color: Colors.blue,
+                child: Text('Increase'),
+                onPressed: () {},
+              ),
+              RaisedButton(
+                color: Colors.red,
+                child: Text('Decrease'),
+                onPressed: () {},
+              ),
+            ],
+          ),
         ],
       ),
     );
